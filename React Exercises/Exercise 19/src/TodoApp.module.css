@@ -1,0 +1,151 @@
+.app {
+	width: min(100% - 32px, 640px);
+	margin: 0 auto;
+	padding: 72px 0 96px;
+	text-align: left;
+}
+
+.header {
+	margin-bottom: 28px;
+}
+
+.eyebrow {
+	margin: 0 0 10px;
+	color: #3c0048;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.8px;
+	text-transform: uppercase;
+}
+
+.header h2 {
+	margin: 0;
+	color: #263238;
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 700;
+	letter-spacing: -1.5px;
+}
+
+.subtitle {
+	margin-top: 10px;
+	color: #66757d;
+}
+
+.form {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+
+.input {
+	min-width: 0;
+	flex: 1;
+	border: 1px solid #cbd5d8;
+	border-radius: 8px;
+	padding: 13px 15px;
+	color: #263238;
+	background: #ffffff;
+	font: inherit;
+	outline: none;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input:focus {
+	border-color: #c75b39;
+	box-shadow: 0 0 0 3px rgba(199, 91, 57, 0.16);
+}
+
+.addButton,
+.deleteButton {
+	border: 0;
+	border-radius: 8px;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.addButton {
+	padding: 0 18px;
+	color: #ffffff;
+	background: #c78739;
+}
+
+.addButton:hover,
+.addButton:focus-visible {
+	background: #a9472b;
+}
+
+.addButton:active,
+.deleteButton:active {
+	transform: translateY(1px);
+}
+
+.list {
+	display: grid;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 58px;
+	padding: 10px 12px 10px 16px;
+	border: 1px solid #dbe3e5;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.todoText {
+	flex: 1;
+	min-width: 0;
+	overflow-wrap: anywhere;
+	color: #263238;
+	cursor: pointer;
+}
+
+.checkbox {
+	width: 19px;
+	height: 19px;
+	flex-shrink: 0;
+	margin: 0;
+	accent-color: #c75b39;
+	cursor: pointer;
+}
+
+.completed {
+	color: #819096;
+	text-decoration: line-through;
+}
+
+.deleteButton {
+	flex-shrink: 0;
+	padding: 8px 10px;
+	color: #a9472b;
+	background: #fff0eb;
+	font-size: 14px;
+}
+
+.deleteButton:hover,
+.deleteButton:focus-visible {
+	background: #fbded4;
+}
+
+@media (max-width: 520px) {
+	.app {
+		padding-top: 48px;
+	}
+
+	.form {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.addButton {
+		min-height: 46px;
+	}
+}
