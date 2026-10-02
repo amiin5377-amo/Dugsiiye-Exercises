@@ -6,6 +6,8 @@ import Categories from "./Pages/Categories";
 import Home from "./Pages/Home";
 import CategoriesRecipe from "./Pages/CategoriesRecipe";
 import NotFound from "./Pages/NotFound";
+import LoginForm from "./Pages/LoginForm";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: "recipes",
-        element: <RecipeList />
+        element: (<ProtectedRoute element={<RecipeList/>}/>)
+      },
+      {
+        path: "login",
+        element: <LoginForm/>
       },
       {
         path: "recipes/:id",
@@ -27,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "categories",
-        element: <Categories />,
+        element: (<ProtectedRoute element={<Categories/>}/>),
         children: [
           {
             path: ":categoryId",

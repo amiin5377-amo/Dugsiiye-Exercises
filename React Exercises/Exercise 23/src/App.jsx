@@ -35,8 +35,8 @@ function App() {
     if (!formData.role) {
       newErrors.role = "Role is required"
     }
-    if (!formData.experience) {
-      newErrors.experience = "Experience is required"
+    if (!formData.experience || formData.experience.length < 0) {
+      newErrors.experience = "Experience is required and must be a positive number"
     }
     if (formData.skills.length === 0) {
       newErrors.skills = "At least one skill is required"
